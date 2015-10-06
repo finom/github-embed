@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/prettify/0.1/prettify.css">
+<link rel="stylesheet" href="http://jmblog.github.io/color-themes-for-google-code-prettify/css/themes/github.css">
+<link rel="stylesheet" href="github-embedder.css">
+<script src="http://cdn.jsdelivr.net/prettify/0.1/prettify.js"></script>
+<script src="github-embedder.js"></script>
+<div style="width: 800px; height: 600px"></div>
+<script>
+	githubEmbedder({
+		el: 'div',
+		linenums: true,
+		embed: [{
+			type: 'result',
+			url: 'http://matreshkajs.github.io/matreshka_examples/treeview/'
+		}, {
+			type: 'js',
+			repo: 'matreshkajs/matreshka_examples',
+			branch: 'gh-pages',
+			path: 'treeview/js/app.js'
+		}, {
+			type: 'js',
+			active: true,
+			repo: 'matreshkajs/matreshka_examples',
+			branch: 'gh-pages',
+			path: 'treeview/js/tree.class.js'
+		}, {
+			type: 'js',
+			repo: 'matreshkajs/matreshka_examples',
+			branch: 'gh-pages',
+			path: 'treeview/js/tree-leaf.class.js'
+		}]
+	})
+</script>
