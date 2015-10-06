@@ -4,6 +4,8 @@ This script nicely embedds HTML pages and some sources from Github onto your web
 
 ![](http://i.imgur.com/APSrkC6.png)
 
+[Live example](http://jsbin.com/zosoli/1/)
+
 ## How to use
 - Include Prettyprint CSS file.
 - Include Prettyprint CSS theme. You can find one [there](http://jmblog.github.io/color-themes-for-google-code-prettify/).
