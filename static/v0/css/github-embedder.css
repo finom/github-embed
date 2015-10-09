@@ -1,0 +1,138 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body, main {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+	font-size: 12px;
+}
+
+main {
+	border: solid 1px #C6CACD;
+	position: relative;
+	
+}
+
+main.loading::before {
+	content: 'Loading...';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	background: white;
+	padding-top: 50px;
+	text-align: center;
+	box-sizing: border-box;
+	z-index: 3;
+}
+
+main,
+nav,
+.frames,
+.frame,
+body
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.error-text {
+	z-index: 3;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: white;
+	color: red;
+	display: none;
+	padding-top: 50px;
+	text-align: center;
+}
+
+main.error .error-text {
+	display: block;
+}
+
+nav {
+	border-bottom: solid 1px #C6CACD;
+	z-index: 1;
+	overflow-x: auto;
+	white-space: nowrap;
+	position: fixed;
+	top: 1px;
+	width: 100%;
+}
+
+nav a {
+	line-height: 34px;
+	padding: 0 15px;
+	color: #525252;
+	cursor: pointer;
+}
+
+nav a.active {
+	font-weight: bold;
+}
+
+.frames {
+	padding: 35px 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.frame {
+	border: 0;
+	-border-top: solid 1px #C6CACD;
+	-border-bottom: solid 1px #C6CACD;
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow: auto;
+	background: white;
+	
+}
+
+.frame:hover {
+	z-index: 2;
+}
+
+.frame.active {
+	display: block;
+}
+
+footer {
+	border-top: solid 1px #C6CACD;
+	padding: 0 15px;
+	line-height: 34px;
+	z-index: 1;
+	overflow-x: auto;
+	white-space: nowrap;
+	position: fixed;
+	bottom: 1px;
+	width: 100%;
+	height: 35px;
+	z-index: 1;
+}
+
+footer span {
+	float: right;
+}
+
+pre.prettyprint {
+	border: 0;
+}
+
+pre.prettyprint ol.linenums > li {
+	list-style-type: decimal;
+	background: white;
+}

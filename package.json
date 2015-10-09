@@ -1,0 +1,30 @@
+{
+  "name": "gh-embed",
+  "version": "0.0.1",
+  "description": "Github source embedder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finom/github-embedder.git"
+  },
+  "keywords": [
+    "embed",
+    "github"
+  ],
+  "author": "Andrey Gubanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finom/github-embedder/issues"
+  },
+  "homepage": "https://github.com/finom/github-embedder#readme",
+  "devDependencies": {
+    "compression": "^1.6.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-sftp": "^0.1.5",
+    "optimist": "^0.6.1"
+  }
+}
