@@ -2,7 +2,7 @@
 	"use strict";
 	var urlData = readURL();
 	
-	getFile(urlData, urlData.pathToMeta +'.gh-embed.json', function(d) {console.log(d)
+	getFile(urlData, urlData.pathToMeta +'.gh-embed.json', function(d) {
 		if(d.error) {
 			return error('Cannot load .gh-embed.json: ' + d.error);
 		}

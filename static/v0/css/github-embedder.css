@@ -130,6 +130,7 @@ footer span {
 
 pre.prettyprint {
 	border: 0;
+	tab-size: 4;
 }
 
 pre.prettyprint ol.linenums > li {

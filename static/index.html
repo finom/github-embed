@@ -36,7 +36,7 @@
 					The third step is adding an <code>iframe</code> on your webpage. <code>"src"</code> attribute of your iframe should be formatted as: <code>http://gh-embed.matreshka.io/v0/{OWNER}/{REPO}/{PATH_TO_SETTINGS}/?ref={REF}</code>, where <code>OWNER</code> is repo owner, <code>REPO</code> is target repository, <code>PATH_TO_SETTINGS</code> is a path to <code>.gh-embed.json</code> (usually root, which means <code>PATH_TO_SETTINGS</code> is optional), <code>REF</code> is specific branch or commit (master by default). <code>v0</code> means a version of embedder. Example:
 					<br>
 					<code>&lt;iframe width="100%" height="400" frameborder="0" <br> src="http://gh-embed.matreshka.io/v0/matreshkajs/matreshka_examples/treeview/?ref=gh-pages
-					<br>"></code>
+					<br>">&lt;/iframe></code>
 				</p>
 				<h2>Settings (<code>.gh-embed.json</code>)</h2>
 				<ul>
@@ -83,10 +83,11 @@
 	}]
 }
 </code></pre>
-				<iframe width="100%" height="400" frameborder="0" src="http://gh-embed.matreshka.io/v0/matreshkajs/matreshka_examples/treeview/?ref=gh-pages">
+				<iframe width="100%" height="400" frameborder="0" src="http://gh-embed.matreshka.io/v0/matreshkajs/matreshka_examples/treeview/?ref=gh-pages"></iframe>
 			</div>
 		</div>
 	</div>
+	<a href="https://github.com/finom/gh-embed/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 </body>
 </html>
 
