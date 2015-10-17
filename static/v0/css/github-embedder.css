@@ -15,7 +15,7 @@ body {
 main {
 	border: solid 1px #C6CACD;
 	position: relative;
-	
+
 }
 
 main.loading::before {
@@ -99,7 +99,7 @@ nav a.active {
 	display: none;
 	overflow: auto;
 	background: white;
-	
+
 }
 
 .frame:hover {
@@ -136,4 +136,8 @@ pre.prettyprint {
 pre.prettyprint ol.linenums > li {
 	list-style-type: decimal;
 	background: white;
+}
+
+.on-github {
+	float: right;
 }
