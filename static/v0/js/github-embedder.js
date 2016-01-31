@@ -130,7 +130,6 @@
 		xhr.onload = function() {
 			var resp = JSON.parse(xhr.responseText);
 			if(resp.content) {
-			  console.log(resp.content);
 				callback(atob(resp.content.replace(/\s/g, '')));
 			} else {
 				xhr.onerror();
