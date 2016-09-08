@@ -7,25 +7,13 @@ const postcssCalc = require('postcss-calc');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    'react-hot-loader/patch',
-    'babel-polyfill',
-    './src/index',
-    './src/css/style.css'
-  ],
+  devtool: 'source-map',
+  entry: './src/css/style.css',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/',
-    library: 'githubEmbed',
-    libraryTarget: 'umd'
+    path: path.join(__dirname, 'npm'),
+    filename: 'whatever.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({ React: 'react' }),
     new ExtractTextPlugin("css/style.css",  {
             allChunks: true
         })
@@ -40,11 +28,6 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      exclude: /node_modules/,
-      include: __dirname
-    }, {
       test: /\.css?$/,
       loader: ExtractTextPlugin.extract("style", "css!postcss"),
       include: __dirname

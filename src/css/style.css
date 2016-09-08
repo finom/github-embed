@@ -1,8 +1,6 @@
-
-
 .github-embed {
     &-main {
-        @import "../node_modules/highlight.js/styles/tomorrow.css";
+        @import "../../node_modules/highlight.js/styles/tomorrow.css";
 
         width: 100%;
         height: 500px;

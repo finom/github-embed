@@ -1,5 +1,7 @@
 # github-embed
 
+**in development**
+
 The tool allows to embed code from Github and keep embedding always up to date.
 
 *Currently this project isn't promoted and not tested because of embedding complexity. It's used only for my own purposes for now. If you have some ideas how to make embedding easier, let me know.*
