@@ -1,0 +1,138 @@
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8959a8;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+.github-embed-main {
+    width: 100%;
+    height: 500px;
+    border: solid 1px #C6CACD;
+    position: relative;
+    box-sizing: border-box;
+}
+.github-embed-main * {
+    box-sizing: border-box;
+}
+.github-embed-nav {
+    border-bottom: solid 1px #C6CACD;
+    z-index: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.github-embed-nav-link {
+    line-height: 32px;
+    line-height: 2rem;
+    padding: 0 16px;
+    padding: 0 1rem;
+    color: #525252;
+    cursor: pointer;
+}
+.github-embed-nav-link-shown {
+    font-weight: bold;
+}
+.github-embed-frames {
+    padding: 32px 0;
+    padding: 2rem 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.github-embed-frames iframe, .github-embed-frames pre {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+}
+.github-embed-frames iframe {
+    border: none;
+}
+.github-embed-frames pre {
+    padding: 16px;
+    padding: 1rem;
+}
+.github-embed-footer {
+    border-top: solid 1px #C6CACD;
+    padding: 0 16px;
+    padding: 0 1rem;
+    line-height: 32px;
+    line-height: 2rem;
+    z-index: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    text-align: right;
+}
