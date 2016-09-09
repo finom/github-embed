@@ -1,14 +1,6 @@
 import * as types from '../constants';
 import getGithubFile from '../lib/get-github-file';
 
-
-export function setLoaded(loaded) {
-    return {
-        type: types.SET_LOADED,
-        loaded
-    }
-}
-
 function error(errorText) {
     return {
         type: types.ERROR,
@@ -50,6 +42,13 @@ function showFrame(index) {
     return {
         type: types.SHOW_FRAME,
         index
+    }
+}
+
+export function setLoaded(loaded) {
+    return {
+        type: types.SET_LOADED,
+        loaded
     }
 }
 

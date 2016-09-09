@@ -4,6 +4,7 @@
   "description": "Github emvedder",
   "main": "server.js",
   "scripts": {
+    "unit": "tape -r babel-register -r babel-polyfill test/**/*Spec.js",
     "prepublish": "rimraf npm && npm run bundle-npm-css && babel src -d npm",
     "bundle-npm-css": "webpack --config webpack-only-css.config.js",
     "start": "node server.js",

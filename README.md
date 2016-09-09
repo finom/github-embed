@@ -66,3 +66,12 @@ There is one more thing: you can add to your embedding list any webpage. It coul
 	}]
 }
 ```
+
+
+## Todo
+- Semantic-release
+- Deploy bundle on github
+- Deploy CSS file on npm
+- App error handling
+- Allow to use an object instead of external file
+- Eslint
