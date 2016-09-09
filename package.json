@@ -4,11 +4,9 @@
   "version": "0.0.0-auto",
   "main": "npm/index.js",
   "scripts": {
-    "prepublish": "shx rm -rf npm bundle && deploy-to-git && babel src -d npm",
-    "bundle-npm-css": "webpack --config webpack-only-css.config.js",
     "start": "node server.js",
     "bundle": "webpack && shx mkdir -p npm/css/ && shx cp -r bundle/css/github-embed.css npm/css/github-embed.css",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release pre && shx rm -rf npm bundle && deploy-to-git && babel src -d npm && npm publish && semantic-release post",
     "commit": "git-cz"
   },
   "config": {
