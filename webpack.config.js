@@ -17,8 +17,8 @@ module.exports = {
     './src/css/style.css'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'bundle'),
+    filename: 'github-embed.js',
     publicPath: '/static/',
     library: 'githubEmbed',
     libraryTarget: 'umd'
@@ -26,7 +26,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({ React: 'react' }),
-    new ExtractTextPlugin("css/style.css",  {
+    new ExtractTextPlugin("css/github-embed.css",  {
             allChunks: true
         })
   ],
