@@ -1,6 +1,7 @@
 {
   "name": "github-embed",
   "description": "Github emvedder",
+  "version": "0.0.0-auto",
   "main": "npm/index.js",
   "scripts": {
     "prepublish": "shx rm -rf npm bundle && deploy-to-git && babel src -d npm",
