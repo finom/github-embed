@@ -8,7 +8,8 @@ export default ({
         <a className={classNames({
             'github-embed-nav-link': true,
             'github-embed-nav-link-shown': shown
-        })} key={index} onClick={() => onLabelClick(index)}>
+        })} key={index} onClick={() => onLabelClick(index)}
+        >
             {label}
         </a>
     )}

@@ -6,20 +6,18 @@ import HeaderView from './HeaderView';
 
 
 function mapState(state) {
-  return {
-    items: state.frames.map(item => {
-        return {
+    return {
+        items: state.frames.map(item => ({
             label: item.label || item.path,
             shown: item.shown
-        }
-    })
-  };
+        }))
+    };
 }
 
 function mapDispatch(dispatch) {
-  return {
-    onLabelClick: index => dispatch(actions.activateFrame(index))
-  };
+    return {
+        onLabelClick: index => dispatch(actions.activateFrame(index))
+    };
 }
 
 export default connect(mapState, mapDispatch)(HeaderView);

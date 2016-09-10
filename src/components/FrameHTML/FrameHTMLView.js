@@ -2,7 +2,8 @@ export default ({
     shown,
     loaded,
     url: src,
-    onLoad,
+    onLoad
 }) => (<iframe {...(loaded ? { src } : {})} style={{
     display: shown ? '' : 'none'
-}} onLoad={onLoad} /> );
+}} onLoad={onLoad}
+/>);

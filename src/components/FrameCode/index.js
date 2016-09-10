@@ -10,17 +10,17 @@ function mapState({ frames }, { index }) {
         code,
         type
     } = frames[index];
-    
-  return {
-      shown,
-      code,
-      type
-  };
+
+    return {
+        shown,
+        code,
+        type
+    };
 }
 
 function mapDispatch(dispatch) {
-  return {
-  };
+    return {
+    };
 }
 
 export default connect(mapState, mapDispatch)(FrameCodeView);

@@ -19,29 +19,28 @@ export default async function getGithubFile(reqInfo) {
     } = reqInfo;
 
     let resp;
-    let data;
 
     try {
         resp = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${ref}`);
-    } catch(e) {
+    } catch (e) {
         // fallback in case if API limmit is exceeded
         return makeDirectRequest(reqInfo);
     }
 
-    if(resp.status !== 200) {
+    if (resp.status !== 200) {
         return makeDirectRequest(reqInfo);
     }
 
-    data = await resp.json();
+    const data = await resp.json();
 
-    if(!data.content) {
+    if (!data.content) {
         throw Error('Guthub API returned wrong data');
     }
 
     return atob(data.content.replace(/\s/g, ''));
 }
 
-/*function getFile(data, path, callback) {
+/* function getFile(data, path, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://api.github.com/repos/'+data.owner+'/'+data.repo+'/contents/'+path+'?ref=' + data.ref, true);
 

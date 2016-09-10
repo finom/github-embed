@@ -5,21 +5,21 @@ function error(errorText) {
     return {
         type: types.ERROR,
         error: errorText
-    }
+    };
 }
 
 function parseSettingsPath(settingsPath) {
     return {
         type: types.PARSE_SETTINGS_PATH,
         settingsPath
-    }
+    };
 }
 
 function embed(settings) {
     return {
         type: types.EMBED,
         settings
-    }
+    };
 }
 
 function setCodeContent(index, code) {
@@ -27,7 +27,7 @@ function setCodeContent(index, code) {
         type: types.SET_CODE_CONTENT,
         code,
         index
-    }
+    };
 }
 
 
@@ -35,21 +35,21 @@ function loadFrame(index) {
     return {
         type: types.LOAD_FRAME,
         index
-    }
+    };
 }
 
 function showFrame(index) {
     return {
         type: types.SHOW_FRAME,
         index
-    }
+    };
 }
 
 export function setLoaded(loaded) {
     return {
         type: types.SET_LOADED,
         loaded
-    }
+    };
 }
 
 export function activateFrame(index) {
@@ -57,14 +57,14 @@ export function activateFrame(index) {
         const { frames, settingsPathData } = getState();
         const item = frames[index];
 
-        if(item.loaded) {
+        if (item.loaded) {
             return dispatch(showFrame(index));
         }
 
         dispatch(setLoaded(false));
         dispatch(error(null));
 
-        if(item.type === 'htmlpage') {
+        if (item.type === 'htmlpage') {
             dispatch(loadFrame(index));
             dispatch(showFrame(index));
         } else {
@@ -72,15 +72,15 @@ export function activateFrame(index) {
                 const code = await getGithubFile({
                     path: item.path,
                     owner: item.owner || settingsPathData.owner,
-                    repo:  item.repo || settingsPathData.repo,
-                    ref:  item.ref || settingsPathData.ref
+                    repo: item.repo || settingsPathData.repo,
+                    ref: item.ref || settingsPathData.ref
                 });
 
                 dispatch(setCodeContent(index, code));
                 dispatch(loadFrame(index));
                 dispatch(showFrame(index));
                 dispatch(setLoaded(true));
-            } catch(e) {
+            } catch (e) {
                 dispatch(setLoaded(true));
                 dispatch(error(e));
                 throw e;
@@ -101,7 +101,7 @@ export function initialize(settingsPath) {
 
         try {
             settingsString = await getGithubFile(settingsPathData);
-        } catch(e) {
+        } catch (e) {
             dispatch(setLoaded(true));
             dispatch(error(e));
             throw e;
@@ -109,7 +109,7 @@ export function initialize(settingsPath) {
 
         try {
             settingsObject = JSON.parse(settingsString);
-        } catch(error) {
+        } catch (error) {
             dispatch(setLoaded(true));
             dispatch(error(`Cannot parse settings file (${error})`));
             throw error;
@@ -123,5 +123,5 @@ export function initialize(settingsPath) {
         let activeIndex = frames.findIndex(item => item.active);
         activeIndex = activeIndex === -1 ? 0 : activeIndex;
         dispatch(activateFrame(activeIndex));
-    }
+    };
 }

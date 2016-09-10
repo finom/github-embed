@@ -8,7 +8,7 @@ export default class extends Component {
             shown
         } = this.props;
 
-        if(!this.highlighted && shown && code) {
+        if (!this.highlighted && shown && code) {
             highlightBlock(this.ref);
             this.highlighted = true;
         }
@@ -21,7 +21,7 @@ export default class extends Component {
             type
         } = this.props;
 
-        return  (<pre ref={ref => this.ref = ref} className={type} style={{
+        return (<pre ref={ref => this.ref = ref} className={type} style={{
             display: shown ? '' : 'none'
         }}>{code}</pre>);
     }

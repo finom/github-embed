@@ -12,17 +12,17 @@ function mapState({ frames }, { index }) {
         url
     } = frames[index];
 
-  return {
-      shown,
-      loaded,
-      url
-  };
+    return {
+        shown,
+        loaded,
+        url
+    };
 }
 
 function mapDispatch(dispatch) {
-  return {
-      onLoad: () => dispatch(actions.setLoaded(true))
-  };
+    return {
+        onLoad: () => dispatch(actions.setLoaded(true))
+    };
 }
 
 export default connect(mapState, mapDispatch)(FrameHTMLView);

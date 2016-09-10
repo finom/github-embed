@@ -5,13 +5,13 @@ import * as actions from '../../actions';
 import GithubEmbedView from './GithubEmbedView';
 
 function mapState(state) {
-  return {
-    loaded: state.loaded
-  };
+    return {
+        loaded: state.loaded
+    };
 }
 
 function mapDispatch(dispatch) {
-  return {};
+    return {};
 }
 
 export default connect(mapState, mapDispatch)(GithubEmbedView);

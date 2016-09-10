@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import GithubEmbed from '../GithubEmbed';
 
-export default class Root extends Component {
-  render() {
-    const { store } = this.props;
-    return (
-      <Provider store={store}>
+const Root = ({
+    store
+}) => (
+    <Provider store={store}>
         <GithubEmbed />
-      </Provider>
-    );
-  }
-}
+    </Provider>
+);
+
+Root.propTypes = {
+    store: PropTypes.object.isRequired
+};
+
+export default Root;
