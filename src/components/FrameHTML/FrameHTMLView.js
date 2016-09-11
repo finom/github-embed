@@ -1,9 +1,23 @@
-export default ({
+import { PropTypes } from 'react';
+
+const FrameHTMLView = ({
     shown,
     loaded,
     url: src,
     onLoad
-}) => (<iframe {...(loaded ? { src } : {})} style={{
-    display: shown ? '' : 'none'
-}} onLoad={onLoad}
+}) => (<iframe
+    {...(loaded ? { src } : {})}
+    style={{
+        display: shown ? '' : 'none'
+    }}
+    onLoad={onLoad}
 />);
+
+FrameHTMLView.propTypes = {
+    shown: PropTypes.boolean.isRequired,
+    loaded: PropTypes.boolean.isRequired,
+    url: PropTypes.string.isRequired,
+    onLoad: PropTypes.func.isRequired
+};
+
+export default FrameHTMLView;

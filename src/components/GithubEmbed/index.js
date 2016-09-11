@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../../actions';
 import GithubEmbedView from './GithubEmbedView';
 
 function mapState(state) {
@@ -10,8 +7,4 @@ function mapState(state) {
     };
 }
 
-function mapDispatch(dispatch) {
-    return {};
-}
-
-export default connect(mapState, mapDispatch)(GithubEmbedView);
+export default connect(mapState, null)(GithubEmbedView);

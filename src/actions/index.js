@@ -86,6 +86,8 @@ export function activateFrame(index) {
                 throw e;
             }
         }
+
+        return undefined;
     };
 }
 
@@ -109,13 +111,14 @@ export function initialize(settingsPath) {
 
         try {
             settingsObject = JSON.parse(settingsString);
-        } catch (error) {
+        } catch (e) {
             dispatch(setLoaded(true));
-            dispatch(error(`Cannot parse settings file (${error})`));
-            throw error;
+            dispatch(error(`Cannot parse settings file (${e})`));
+            throw e;
         }
 
-        settingsObject.embed.forEach(item => item.loaded = false);
+        // eslint-disable-next-line no-param-reassign
+        settingsObject.embed.forEach(item => { item.loaded = false; });
 
         dispatch(embed(settingsObject));
         const { frames } = getState();

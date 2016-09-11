@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import { Component, PropTypes } from 'react';
 import { highlightBlock } from 'highlight.js';
 
-export default class extends Component {
+class FrameCodeView extends Component {
     componentDidUpdate() {
         const {
             code,
@@ -21,8 +21,22 @@ export default class extends Component {
             type
         } = this.props;
 
-        return (<pre ref={ref => this.ref = ref} className={type} style={{
-            display: shown ? '' : 'none'
-        }}>{code}</pre>);
+        return (<pre
+            ref={ref => { this.ref = ref; }}
+            className={type}
+            style={{
+                display: shown ? '' : 'none'
+            }}
+        >
+            {code}
+        </pre>);
     }
 }
+
+FrameCodeView.propTypes = {
+    code: PropTypes.string.isRequired,
+    shown: PropTypes.boolean.isRequired,
+    type: PropTypes.string.isRequired
+};
+
+export default FrameCodeView;
