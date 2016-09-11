@@ -1,6 +1,6 @@
 import { PropTypes } from 'react';
 import { Provider } from 'react-redux';
-import GithubEmbed from '../GithubEmbed';
+import GithubEmbed from './GithubEmbed';
 
 const Root = ({
     store

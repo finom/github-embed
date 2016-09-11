@@ -69,8 +69,6 @@ There is one more thing: you can add to your embedding list any webpage. It coul
 
 
 ## Todo
-- Deploy CSS file on npm
+- Deploy CSS file on npm (just describe in doc)
 - App error handling
 - Allow to use an object instead of external file
-- Tests
-- Eslint
