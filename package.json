@@ -4,6 +4,7 @@
   "version": "0.0.0-auto",
   "main": "npm/index.js",
   "scripts": {
+    "test": "npm run lint",
     "start": "node server.js",
     "lint": "eslint ./src",
     "bundle": "webpack && shx mkdir -p npm/css/ && shx cp -r bundle/github-embed.css npm/css/github-embed.css",
