@@ -35,7 +35,7 @@ class FrameCodeView extends Component {
 
 FrameCodeView.propTypes = {
     code: PropTypes.string.isRequired,
-    shown: PropTypes.boolean.isRequired,
+    shown: PropTypes.bool.isRequired,
     type: PropTypes.string.isRequired
 };
 

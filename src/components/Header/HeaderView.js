@@ -22,7 +22,7 @@ const HeaderView = ({
 HeaderView.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         label: PropTypes.string.isRequired,
-        shown: PropTypes.boolean.isRequired
+        shown: PropTypes.bool.isRequired
     })),
     onLabelClick: PropTypes.func.isRequired
 };

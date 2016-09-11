@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import bala from 'balajs';
@@ -16,7 +15,7 @@ module.exports = function githubEmbed(node, pathToSettings) {
         <AppContainer>
             <Root store={store} />
         </AppContainer>,
-      bala.one(node)
+        bala.one(node)
     );
 
 

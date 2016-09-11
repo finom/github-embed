@@ -10,12 +10,12 @@ const FrameHTMLView = ({
     style={{
         display: shown ? '' : 'none'
     }}
-    onLoad={onLoad}
+    onLoad={() => onLoad()}
 />);
 
 FrameHTMLView.propTypes = {
-    shown: PropTypes.boolean.isRequired,
-    loaded: PropTypes.boolean.isRequired,
+    shown: PropTypes.bool.isRequired,
+    loaded: PropTypes.bool.isRequired,
     url: PropTypes.string.isRequired,
     onLoad: PropTypes.func.isRequired
 };

@@ -14,7 +14,7 @@ const GithubEmbedView = ({
 </div>);
 
 GithubEmbedView.propTypes = {
-    loaded: PropTypes.boolean.isRequired
+    loaded: PropTypes.bool.isRequired
 };
 
 export default GithubEmbedView;

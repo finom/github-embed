@@ -8,10 +8,10 @@ const Root = ({
 }) => (
     <Provider store={store}>
         <GithubEmbed />
-        <DevTools />
+
     </Provider>
 );
-
+//<DevTools />
 Root.propTypes = {
     store: PropTypes.object.isRequired
 };

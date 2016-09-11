@@ -117,8 +117,14 @@ export function initialize(settingsPath) {
             throw e;
         }
 
-        // eslint-disable-next-line no-param-reassign
-        settingsObject.embed.forEach(item => { item.loaded = false; });
+
+        settingsObject.embed.forEach(item => {
+            item.loaded = false; // eslint-disable no-param-reassign
+            item.shown = false; // eslint-disable no-param-reassign
+            if(item.type !== 'htmlpage') {
+                item.code = ''; // eslint-disable no-param-reassign
+            }
+        });
 
         dispatch(embed(settingsObject));
         const { frames } = getState();

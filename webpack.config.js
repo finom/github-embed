@@ -13,22 +13,22 @@ module.exports = {
     'webpack/hot/only-dev-server',
     'react-hot-loader/patch',
     'babel-polyfill',
+    './src/css/style.css',
     './src/index',
-    './src/css/style.css'
   ],
   output: {
     path: path.join(__dirname, 'bundle'),
     filename: 'github-embed.js',
-    publicPath: '/static/',
+    publicPath: '/bundle/',
     library: 'githubEmbed',
     libraryTarget: 'umd'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({ React: 'react' }),
-    new ExtractTextPlugin("css/github-embed.css",  {
-            allChunks: true
-        })
+    new ExtractTextPlugin("github-embed.css",  {
+        allChunks: true
+    })
   ],
   postcss(webpack) {
       return [
