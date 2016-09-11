@@ -3,6 +3,7 @@ import Loader from 'react-loader';
 import Header from '../Header';
 import Footer from '../Footer';
 import Frames from '../Frames';
+import Error from '../Error';
 
 const GithubEmbedView = ({
     loaded
@@ -10,6 +11,7 @@ const GithubEmbedView = ({
     <Header />
     <Frames />
     <Footer />
+    <Error />
     <Loader loaded={loaded} />
 </div>);
 

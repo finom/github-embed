@@ -70,4 +70,13 @@
         z-index: 1;
         text-align: right;
     }
+
+    &-error {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: red;
+    }
 }

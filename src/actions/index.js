@@ -1,10 +1,22 @@
 import * as types from '../constants';
 import getGithubFile from '../lib/get-github-file';
 
-function error(errorText) {
+let errorTimeout;
+
+function pureError(errorText) {
     return {
         type: types.ERROR,
         error: errorText
+    };
+}
+
+function error(errorText) {
+    return dispatch => {
+        clearTimeout(errorTimeout);
+        dispatch(pureError(errorText ? `${errorText}` : ''));
+        errorTimeout = setTimeout(() => {
+            dispatch(pureError(null));
+        }, 5000)
     };
 }
 
