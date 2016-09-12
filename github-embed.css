@@ -1,2 +1,155 @@
-.hljs-comment,.hljs-quote{color:#8e908c}.hljs-deletion,.hljs-name,.hljs-regexp,.hljs-selector-class,.hljs-selector-id,.hljs-tag,.hljs-template-variable,.hljs-variable{color:#c82829}.hljs-built_in,.hljs-builtin-name,.hljs-link,.hljs-literal,.hljs-meta,.hljs-number,.hljs-params,.hljs-type{color:#f5871f}.hljs-attribute{color:#eab700}.hljs-addition,.hljs-bullet,.hljs-string,.hljs-symbol{color:#718c00}.hljs-section,.hljs-title{color:#4271ae}.hljs-keyword,.hljs-selector-tag{color:#8959a8}.hljs{display:block;overflow-x:auto;background:#fff;color:#4d4d4c;padding:.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.github-embed-main{width:100%;height:500px;border:1px solid #c6cacd;position:relative}.github-embed-main,.github-embed-main *{box-sizing:border-box}.github-embed-nav{border-bottom:1px solid #c6cacd;z-index:1;overflow-x:auto;white-space:nowrap;width:100%;position:absolute;top:0}.github-embed-nav-link{line-height:32px;line-height:2rem;padding:0 16px;padding:0 1rem;color:#525252;cursor:pointer}.github-embed-nav-link-shown{font-weight:700}.github-embed-nav-on-github{float:right;padding:0 16px;padding:0 1rem;line-height:32px;line-height:2rem}.github-embed-frames{padding:32px 0;padding:2rem 0;top:0;width:100%;height:100%;position:absolute}.github-embed-frames iframe,.github-embed-frames pre{width:100%;height:100%;overflow:auto;margin:0}.github-embed-frames iframe{border:none}.github-embed-frames pre{padding:16px;padding:1rem}.github-embed-footer{border-top:1px solid #c6cacd;padding:0 16px;padding:0 1rem;line-height:32px;line-height:2rem;overflow-x:auto;white-space:nowrap;position:absolute;bottom:0;width:100%;z-index:1;text-align:right}.github-embed-error{position:absolute;z-index:1;top:50%;width:100%;text-align:center;color:red}
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8959a8;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+.github-embed-main {
+    width: 100%;
+    height: 500px;
+    border: solid 1px #C6CACD;
+    position: relative;
+    box-sizing: border-box;
+}
+.github-embed-main * {
+    box-sizing: border-box;
+}
+.github-embed-nav {
+    border-bottom: solid 1px #C6CACD;
+    z-index: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.github-embed-nav-link {
+    line-height: 32px;
+    line-height: 2rem;
+    padding: 0 16px;
+    padding: 0 1rem;
+    color: #525252;
+    cursor: pointer;
+}
+.github-embed-nav-link-shown {
+    font-weight: bold;
+}
+.github-embed-nav-on-github {
+    float: right;
+    padding: 0 16px;
+    padding: 0 1rem;
+    line-height: 32px;
+    line-height: 2rem;
+}
+.github-embed-frames {
+    padding: 32px 0;
+    padding: 2rem 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.github-embed-frames iframe, .github-embed-frames pre {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin: 0;
+}
+.github-embed-frames iframe {
+    border: none;
+}
+.github-embed-frames pre {
+    padding: 16px;
+    padding: 1rem;
+}
+.github-embed-footer {
+    border-top: solid 1px #C6CACD;
+    padding: 0 16px;
+    padding: 0 1rem;
+    line-height: 32px;
+    line-height: 2rem;
+    z-index: 1;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    text-align: right;
+}
+.github-embed-error {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
 /*# sourceMappingURL=github-embed.css.map*/
