@@ -8,6 +8,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const entry = [
     './src/css/style.css',
+    'babel-polyfill',
     './src/index'
 ];
 
@@ -31,8 +32,7 @@ if (process.env.NODE_ENV === 'development') {
     entry.unshift(
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
-        'react-hot-loader/patch',
-        'babel-polyfill'
+        'react-hot-loader/patch'
     );
 
     plugins.push(

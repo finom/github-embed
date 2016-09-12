@@ -19,9 +19,9 @@ githubEmbed('.element', settings);
 ```
 CSS file is placed at **node_modules/css/github-embed.css**.
 
-### Direct usage
+### Direct use
 
-Bundled (downloadable) version of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages)
+Bundled (downloadable) version and the demo of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages)
 ```html
 <script src="github-embed.min.js"></script>
 <script>
