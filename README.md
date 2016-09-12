@@ -4,6 +4,8 @@ The tool allows to embed code from Github on a webpage.
 
 ![](http://i.imgur.com/LmUAogr.png)
 
+[Demo](http://finom.github.io/github-embed/demo.html)
+
 ## Usage
 
 ### CommonJS
