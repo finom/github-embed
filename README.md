@@ -14,6 +14,6 @@ This branch contains minified bundle of [github-embed](https://github.com/finom/
 
 ```html
 <script>
-  githubEmbed('#root', '...');
+  githubEmbed('.element', settings);
 </script>
 ```
