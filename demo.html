@@ -14,37 +14,24 @@
     </style>
   </head>
   <body>
+    <h2>Embedded via settings object</h2>
     <div id="setting-object"></div>
+    
+    <h2>Embedded via remote settings file</h2>
     <div id="settings-remote"></div>
   </body>
   <script src="github-embed.min.js"></script>
   <script>
     githubEmbed('#setting-object', {
-    	"owner": "matreshkajs",
-        "repo": "matreshka_examples",
+    	"owner": "finom",
+        "repo": "github-embed",
         "ref": "gh-pages",
     	"embed": [{
-    		"type": "htmlpage",
-    		"label": "Result",
-    		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
+    		"path": "demo.html"
     	}, {
-    		"type": "html",
-    		"label": "index.html",
-    		"path": "treeview/index.html"
-    	}, {
-    		"type": "js",
-    		"label": "app.js",
-    		"path": "treeview/js/app.js"
-    	}, {
-    		"type": "js",
-    		"label": "tree.class.js",
-    		"path": "treeview/js/tree.class.js"
-    	}, {
-    		"type": "js",
-    		"label": "tree-leaf.class.js",
-    		"path": "treeview/js/tree-leaf.class.js"
+    		"path": "README.md"
     	}]
     });
-    githubEmbed('#settings-remote', 'https://github.com/matreshkajs/matreshka_examples/blob/gh-pages/soundcloud_search/.gh-embed.json');
+    githubEmbed('#settings-remote', 'https://github.com/finom/github-embed/blob/master/.gh-embed.json');
   </script>
 </html>
