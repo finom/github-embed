@@ -17,7 +17,10 @@ const plugins = [
     }),
     new webpack.ProvidePlugin({
         React: 'react'
-    })
+    }),
+    new webpack.EnvironmentPlugin([
+        'NODE_ENV'
+    ])
 ];
 
 let devtool;
