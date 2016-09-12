@@ -70,5 +70,5 @@ There is one more thing: you can add to your embedding list any webpage. It coul
 
 ## Todo
 - Deploy CSS file on npm (just describe in doc)
-- Allow to use an object instead of external file
+- Split dev and prod envs
 - On Github link

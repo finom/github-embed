@@ -1,4 +1,4 @@
-import gitHubUrlParse from 'github-url-parse';
+
 import {
     SET_LOADED,
     ERROR,
@@ -6,7 +6,8 @@ import {
     EMBED,
     SHOW_FRAME,
     LOAD_FRAME,
-    SET_CODE_CONTENT
+    SET_CODE_CONTENT,
+    SET_SETTINGS
 } from '../constants';
 
 const initialState = {
@@ -33,30 +34,31 @@ export default function application(state = initialState, action) {
                 error
             };
         }
-        case PARSE_SETTINGS_PATH: {
-            const {
-                    path,
-                    repo,
-                    user: owner,
-                    branch: ref
-                } = gitHubUrlParse(action.settingsPath);
-
+        case SET_SETTINGS: {
+            const { settings } = action;
             return {
                 ...state,
-                settingsPathData: {
-                    owner,
-                    ref,
-                    path,
-                    repo
-                }
+                settings
             };
         }
         case EMBED: {
-            const { lineNumbers = true, embed } = action.settings;
+            const { lineNumbers = true, embed } = state.settings;
             return {
                 ...state,
                 lineNumbers,
-                frames: embed
+                frames: embed.map(item => {
+                    const newValue = {
+                        loaded: false,
+                        shown: false,
+                        ...item
+                    }
+
+                    if(item.type !== 'htmlpage') {
+                        newValue.code = ''; // eslint-disable no-param-reassign
+                    }
+
+                    return newValue;
+                })
             };
         }
         case LOAD_FRAME: {

@@ -15,7 +15,32 @@
   </body>
   <script src="/bundle/github-embed.js"></script>
   <script>
-    githubEmbed('#root1', 'https://github.com/matreshkajs/examples/blob/gh-pages/treeview/.gh-embed.json');
+    githubEmbed('#root1', {
+    	"owner": "matreshkajs",
+        "repo": "matreshka_examples",
+        "ref": "gh-pages",
+    	"embed": [{
+    		"type": "htmlpage",
+    		"label": "Result",
+    		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
+    	}, {
+    		"type": "html",
+    		"label": "index.html",
+    		"path": "treeview/index.html"
+    	}, {
+    		"type": "js",
+    		"label": "app.js",
+    		"path": "treeview/js/app.js"
+    	}, {
+    		"type": "js",
+    		"label": "tree.class.js",
+    		"path": "treeview/js/tree.class.js"
+    	}, {
+    		"type": "js",
+    		"label": "tree-leaf.class.js",
+    		"path": "treeview/js/tree-leaf.class.js"
+    	}]
+    });
     githubEmbed('#root2', 'https://github.com/matreshkajs/matreshka_examples/blob/gh-pages/soundcloud_search/.gh-embed.json');
   </script>
 </html>

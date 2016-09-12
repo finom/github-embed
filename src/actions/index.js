@@ -1,3 +1,4 @@
+import gitHubUrlParse from 'github-url-parse';
 import * as types from '../constants';
 import getGithubFile from '../lib/get-github-file';
 
@@ -64,9 +65,16 @@ export function setLoaded(loaded) {
     };
 }
 
+function setSettings(settings) {
+    return {
+        type: types.SET_SETTINGS,
+        settings
+    }
+}
+
 export function activateFrame(index) {
     return async (dispatch, getState) => {
-        const { frames, settingsPathData } = getState();
+        const { frames, settings } = getState();
         const item = frames[index];
 
         if (item.loaded) {
@@ -83,9 +91,9 @@ export function activateFrame(index) {
             try {
                 const code = await getGithubFile({
                     path: item.path,
-                    owner: item.owner || settingsPathData.owner,
-                    repo: item.repo || settingsPathData.repo,
-                    ref: item.ref || settingsPathData.ref
+                    owner: item.owner || settings.owner,
+                    repo: item.repo || settings.repo,
+                    ref: item.ref || settings.ref
                 });
 
                 dispatch(setCodeContent(index, code));
@@ -103,18 +111,27 @@ export function activateFrame(index) {
     };
 }
 
-export function initialize(settingsPath) {
-    return async (dispatch, getState) => {
-        dispatch(parseSettingsPath(settingsPath));
-        dispatch(setLoaded(false));
+function initializeRemoteSettings(settingsPath) {
+    return async (dispatch) => {
+        const {
+            path: relativeSettingsPath,
+            repo,
+            user: owner,
+            branch: ref
+        } = gitHubUrlParse(settingsPath);
 
-        const { settingsPathData } = getState();
+        dispatch(setLoaded(false));
 
         let settingsString;
         let settingsObject;
 
         try {
-            settingsString = await getGithubFile(settingsPathData);
+            settingsString = await getGithubFile({
+                owner,
+                ref,
+                repo,
+                path: relativeSettingsPath,
+            });
         } catch (e) {
             dispatch(setLoaded(true));
             dispatch(error(e));
@@ -123,22 +140,30 @@ export function initialize(settingsPath) {
 
         try {
             settingsObject = JSON.parse(settingsString);
+            dispatch(setSettings(Object.assign(settingsObject, {
+                owner,
+                ref,
+                repo,
+                relativeSettingsPath
+            })));
         } catch (e) {
             dispatch(setLoaded(true));
             dispatch(error(`Cannot parse settings file (${e})`));
             throw e;
         }
+    }
+}
 
+export function initialize(settings) {
+    return async (dispatch, getState) => {
+        if(typeof settings === 'string') {
+            await dispatch(initializeRemoteSettings(settings));
+        } else {
+            dispatch(setSettings(settings));
+        }
 
-        settingsObject.embed.forEach(item => {
-            item.loaded = false; // eslint-disable no-param-reassign
-            item.shown = false; // eslint-disable no-param-reassign
-            if(item.type !== 'htmlpage') {
-                item.code = ''; // eslint-disable no-param-reassign
-            }
-        });
+        dispatch(embed());
 
-        dispatch(embed(settingsObject));
         const { frames } = getState();
 
         let activeIndex = frames.findIndex(item => item.active);
