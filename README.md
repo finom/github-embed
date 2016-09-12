@@ -1,6 +1,6 @@
 # github-embed bundle
 
-This branch contains minified bundle of [github-embed](https://github.com/finom/github-embed).
+This branch contains a minified bundle of [github-embed](https://github.com/finom/github-embed).
 
 ```html
 <script src="github-embed.min.js"></script>
