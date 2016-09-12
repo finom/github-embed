@@ -112,6 +112,5 @@ It should contain valid JSON object with data described above. The only differen
 ```
 
 ## Todo
-- Deploy CSS file on npm (just describe in doc)
 - Split dev and prod envs
 - On Github link

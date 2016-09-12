@@ -4,11 +4,18 @@ import HeaderView from './HeaderView';
 
 
 function mapState(state) {
+    const {
+        owner,
+        repo,
+        ref
+    } = state.settings || {};
+
     return {
         items: state.frames.map(item => ({
             label: item.label || item.path,
             shown: item.shown
-        }))
+        })),
+        githubLink: `http://github.com/${owner}/${repo}/tree/${ref}/`
     };
 }
 

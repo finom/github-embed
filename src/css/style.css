@@ -32,6 +32,12 @@
                 font-weight: bold;
             }
         }
+
+        &-on-github {
+            float: right;
+            padding: 0 1rem;
+            line-height: 2rem;
+        }
     }
 
     &-frames {

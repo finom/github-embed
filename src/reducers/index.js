@@ -47,16 +47,18 @@ export default function application(state = initialState, action) {
                 ...state,
                 lineNumbers,
                 frames: embed.map(item => {
-                    const splittedPath = item.path.split('.');
+
                     const newValue = {
                         loaded: false,
                         shown: false,
                         ...item,
-                        type: item.type || splittedPath[splittedPath.length - 1]
+
                     }
 
                     if(item.type !== 'htmlpage') {
-                        newValue.code = ''; // eslint-disable no-param-reassign
+                        const splittedPath = item.path.split('.');
+                        newValue.type = item.type || splittedPath[splittedPath.length - 1];
+                        newValue.code = '';
                     }
 
                     return newValue;

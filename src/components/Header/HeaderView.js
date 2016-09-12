@@ -3,6 +3,7 @@ import { PropTypes } from 'react';
 
 const HeaderView = ({
     items,
+    githubLink,
     onLabelClick
 }) => (<nav className="github-embed-nav">
     {items.map(({ shown, label }, index) =>
@@ -17,6 +18,8 @@ const HeaderView = ({
             {label}
         </a>
     )}
+
+    <a className="github-embed-nav-on-github" target="_blank" href={githubLink}>On Github</a>
 </nav>);
 
 HeaderView.propTypes = {
@@ -24,7 +27,8 @@ HeaderView.propTypes = {
         label: PropTypes.string.isRequired,
         shown: PropTypes.bool.isRequired
     })),
-    onLabelClick: PropTypes.func.isRequired
+    onLabelClick: PropTypes.func.isRequired,
+    githubLink: PropTypes.string.isRequired
 };
 
 export default HeaderView;
