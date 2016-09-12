@@ -1,53 +1,97 @@
 # github-embed
 
-**in development**
-
-The tool allows to embed code from Github and keep embedding always up to date.
-
-*Currently this project isn't promoted and not tested because of embedding complexity. It's used only for my own purposes for now. If you have some ideas how to make embedding easier, let me know.*
-
-```
-npm i -D github-embed
-```
-
-```js
-const githubEmbed()
-```
+The tool allows to embed code from Github on a webpage.
 
 ![](http://i.imgur.com/LmUAogr.png)
 
-## Getting started
+## Usage
 
-As the first step you need to do is to create ``.gh-embed.json`` somewhere in your repo (usually in root). This file means embedding settings file and it must contain valid JSON. It's made to keep file paths always up to date: when you change file structure of a project, you need to change the only gh-embed file, you don't need to worry about all places where your code is embedded. This is the main idea of this tool.
-
-The second step to fill ``.gh-embed.json`` by settings described below.
-
-The third step is to add a script to a page:
-```js
-githubEmbed(node, pathToSettings);
+### CommonJS
 ```
-Where ``node`` is a mount node (``Node`` instance, ``jQuery`` instance, selector) and ``pathToSettings`` is a path to ``.gh-embed.json``.
+npm install --save github-embed
+```
+
+```js
+const githubEmbed = require('github-embed');
+githubEmbed('.element', settings);
+```
+CSS file is placed at **node_modules/css/github-embed.css**.
+
+### Direct usage
+
+Bundled (downloadable) version of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages)
+```html
+<script src="github-embed.min.js"></script>
+<script>
+    githubEmbed('.element', settings);
+</script>
+```
+
+
+### API
+
+``githubEmbed`` function accepts two arguments: an element where embedding block will be mount (a selector, a node, jQuery instance etc) and settings object.
+
+Settings object should include the following properties:
+
+- ``repo: STRING`` a name of a repository whose files will be embedded
+- ``owner: STRING`` an owner of thr repo
+- ``ref: STRING`` a branch, a tag or commit SHA
+- ``embed: ARRAY`` a list of embedded files
+	- ``path: STRING`` - a path to embedded file relative to root of the repo
+	- ``type: STRING`` - a type of the file you need to embed (programming language)
+	- ``label: STRING`` - what to display in navigation. By default it's a name of embedded file
+	- ``active: BOOLEAN`` - is the item shown by default
+	- ``repo: STRING`` a name of a repository where current file lives (in case if you want to embed a file from another repo)
+	- ``owner: STRING`` an owner of a repo where current file lives (in case if you want to embed a file from another repo)
+	- ``ref: STRING`` a branch, a tag or commit SHA of a repo where current file lives (in case if you want to embed a file from another branch or repo)
+
+There is one more thing: you can add to your embedding list any webpage. It could be useful if you want to show how does your web tool works. You need to set type option as ``"htmlpage"`` and assign webpage URL to ``"url"`` property
 
 Example:
+```js
+githubEmbed('#root', {
+	"owner": "matreshkajs",
+	"repo": "matreshka_examples",
+	"ref": "gh-pages",
+	"embed": [{
+		"type": "htmlpage",
+		"label": "Result",
+		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
+	}, {
+		"type": "html",
+		"label": "index.html",
+		"path": "treeview/index.html"
+	}, {
+		"type": "js",
+		"label": "app.js",
+		"path": "treeview/js/app.js"
+	}, {
+		"type": "js",
+		"label": "tree.class.js",
+		"path": "treeview/js/tree.class.js"
+	}, {
+		"type": "js",
+		"label": "tree-leaf.class.js",
+		"path": "treeview/js/tree-leaf.class.js"
+	}]
+});
+```
+
+### Remote settings
+
+In case if you want to embed your code on few places and you don't want to break something when a file path is changed (eg you have renamed ``app.js`` to ``index.js``) you can store embedding settings remotely inside a file next to the embedded files.
+
 ```js
 githubEmbed('.embed', 'https://github.com/matreshkajs/examples/blob/gh-pages/treeview/.gh-embed.json');
 ```
 
-## .gh-embed.json
+Usually I call settings file **.gh-embed.json``**. It allows to get your embedding always up to date and you'll need to modify it when paths are changed.
 
-The file needs to contain a key ``"embed"`` which contains an array of embedded files (other top-level settings can be added later). An item of this array should include the following keys:
-
-``path: STRING`` - a path to embedded file relative to root of the repo (required).
-``type: STRING`` - a type of the file you need to embed (programming language).
-``label: STRING`` - what to display in navigation. By default it's a name of embedded file.
-``active: BOOLEAN`` - is the item shown by default
-
-There is one more thing: you can add to your embedding list any webpage. It could be useful if you want to show how does your web tool works. You need to set type option as ``"htmlpage"`` and assign weppagee URL to ``"url"`` property
-
+It should contain valid JSON object with data described above. The only difference you don't need to specify ``owner``, ``repo`` and ``ref`` because these properties will be read from settings URL.
 
 ```js
 {
-	"linenums": true,
 	"embed": [{
 		"type": "htmlpage",
 		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
@@ -66,7 +110,6 @@ There is one more thing: you can add to your embedding list any webpage. It coul
 	}]
 }
 ```
-
 
 ## Todo
 - Deploy CSS file on npm (just describe in doc)

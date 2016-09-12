@@ -47,10 +47,12 @@ export default function application(state = initialState, action) {
                 ...state,
                 lineNumbers,
                 frames: embed.map(item => {
+                    const splittedPath = item.path.split('.');
                     const newValue = {
                         loaded: false,
                         shown: false,
-                        ...item
+                        ...item,
+                        type: item.type || splittedPath[splittedPath.length - 1]
                     }
 
                     if(item.type !== 'htmlpage') {

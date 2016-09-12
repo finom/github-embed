@@ -18,7 +18,7 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'bundle'),
-    filename: 'github-embed.js',
+    filename: 'github-embed.min.js',
     publicPath: '/bundle/',
     library: 'githubEmbed',
     libraryTarget: 'umd'
