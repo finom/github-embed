@@ -1,0 +1,21 @@
+{
+    "embed": [
+        {
+            "type": "htmlpage",
+            "label": "Embedded HTML page",
+            "url": "http://example.com/"
+        },
+        {
+    		"type": "js",
+    		"label": "Webpack config",
+    		"path": "webpack.config.js"
+    	}, {
+    		"type": "js",
+    		"label": "Entry point",
+    		"path": "src/index.js"
+    	}, {
+    		"type": "js",
+    		"path": ".gh-embed.json"
+    	}
+    ]
+}
