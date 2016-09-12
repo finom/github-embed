@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Redux TodoMVC</title>
+    <link rel="stylesheet" type="text/css" href="github-embed.css">
+    <style>
+    body {
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-size: 12px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="setting-object"></div>
+    <div id="settings-remote"></div>
+  </body>
+  <script src="github-embed.min.js"></script>
+  <script>
+    githubEmbed('#setting-object', {
+    	"owner": "matreshkajs",
+        "repo": "matreshka_examples",
+        "ref": "gh-pages",
+    	"embed": [{
+    		"type": "htmlpage",
+    		"label": "Result",
+    		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
+    	}, {
+    		"type": "html",
+    		"label": "index.html",
+    		"path": "treeview/index.html"
+    	}, {
+    		"type": "js",
+    		"label": "app.js",
+    		"path": "treeview/js/app.js"
+    	}, {
+    		"type": "js",
+    		"label": "tree.class.js",
+    		"path": "treeview/js/tree.class.js"
+    	}, {
+    		"type": "js",
+    		"label": "tree-leaf.class.js",
+    		"path": "treeview/js/tree-leaf.class.js"
+    	}]
+    });
+    githubEmbed('#settings-remote', 'https://github.com/matreshkajs/matreshka_examples/blob/gh-pages/soundcloud_search/.gh-embed.json');
+  </script>
+</html>
