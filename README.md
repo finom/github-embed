@@ -2,7 +2,7 @@
 
 The tool allows to embed code from Github on a webpage.
 
-![](http://i.imgur.com/LmUAogr.png)
+![](http://i.imgur.com/d6Ysdpg.png)
 
 [Demo](http://finom.github.io/github-embed/demo.html)
 

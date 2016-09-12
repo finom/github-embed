@@ -8,8 +8,9 @@
     "start": "NODE_ENV=development node server.js",
     "lint": "eslint .",
     "bundle": "NODE_ENV=production webpack && shx mkdir -p npm/css/ && shx cp -r bundle/github-embed.css npm/css/github-embed.css",
+    "compile-npm": "babel src -d npm",
     "deploy-to-git": "deploy-to-git",
-    "semantic-release": "semantic-release pre && shx rm -rf npm bundle && npm run deploy-to-git && babel src -d npm && npm publish && semantic-release post",
+    "semantic-release": "semantic-release pre && shx rm -rf npm bundle && npm run deploy-to-git && npm run compile-npm && npm publish && semantic-release post",
     "commit": "git-cz",
     "check-updates": "ncu",
     "upgrade": "npm run check-updates -- --upgradeAll && npm install"
