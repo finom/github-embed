@@ -8,14 +8,14 @@
         font-size: 12px;
     }
     
-    .setting-object {
+    #setting-object {
       margin-bottom: 4rem;
     }
     </style>
   </head>
   <body>
     <h2>Embedded via settings object</h2>
-    <div id="setting-object"></div>
+    <div id="settings-object"></div>
     
     <h2>Embedded via remote settings file</h2>
     <div id="settings-remote"></div>
@@ -23,7 +23,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.min.js"></script>
   <script src="github-embed.min.js"></script>
   <script>
-    githubEmbed('#setting-object', {
+    githubEmbed('#settings-object', {
     	"owner": "finom",
         "repo": "github-embed",
         "ref": "gh-pages",
