@@ -1,19 +1,19 @@
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-var config = require('./webpack.config');
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  historyApiFallback: true,
-  noInfo: true,
-  stats: {
-    colors: true
-  }
-}).listen(3000, 'localhost', function (err) {
-  if (err) {
-    console.log(err);
-  }
+    publicPath: config.output.publicPath,
+    hot: true,
+    historyApiFallback: true,
+    noInfo: true,
+    stats: {
+        colors: true
+    }
+}).listen(3000, 'localhost', err => {
+    if (err) {
+        console.log(err); // eslint-disable-line no-console
+    }
 
-  console.log('Listening at localhost:3000');
+    console.log('Listening at localhost:3000'); // eslint-disable-line no-console
 });

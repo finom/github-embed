@@ -1,8 +1,6 @@
-
 import {
     SET_LOADED,
     ERROR,
-    PARSE_SETTINGS_PATH,
     EMBED,
     SHOW_FRAME,
     LOAD_FRAME,
@@ -47,15 +45,13 @@ export default function application(state = initialState, action) {
                 ...state,
                 lineNumbers,
                 frames: embed.map(item => {
-
                     const newValue = {
                         loaded: false,
                         shown: false,
-                        ...item,
+                        ...item
+                    };
 
-                    }
-
-                    if(item.type !== 'htmlpage') {
+                    if (item.type !== 'htmlpage') {
                         const splittedPath = item.path.split('.');
                         newValue.type = item.type || splittedPath[splittedPath.length - 1];
                         newValue.code = '';

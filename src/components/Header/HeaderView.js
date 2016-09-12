@@ -19,7 +19,14 @@ const HeaderView = ({
         </a>
     )}
 
-    <a className="github-embed-nav-on-github" target="_blank" href={githubLink}>On Github</a>
+    <a
+        className="github-embed-nav-on-github"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={githubLink}
+    >
+        On Github
+    </a>
 </nav>);
 
 HeaderView.propTypes = {

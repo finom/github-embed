@@ -110,7 +110,3 @@ It should contain valid JSON object with data described above. The only differen
 	}]
 }
 ```
-
-## Todo
-- Split dev and prod envs
-- On Github link

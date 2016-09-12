@@ -17,14 +17,7 @@ function error(errorText) {
         dispatch(pureError(errorText ? `${errorText}` : ''));
         errorTimeout = setTimeout(() => {
             dispatch(pureError(null));
-        }, 5000)
-    };
-}
-
-function parseSettingsPath(settingsPath) {
-    return {
-        type: types.PARSE_SETTINGS_PATH,
-        settingsPath
+        }, 5000);
     };
 }
 
@@ -58,18 +51,18 @@ function showFrame(index) {
     };
 }
 
+function setSettings(settings) {
+    return {
+        type: types.SET_SETTINGS,
+        settings
+    };
+}
+
 export function setLoaded(loaded) {
     return {
         type: types.SET_LOADED,
         loaded
     };
-}
-
-function setSettings(settings) {
-    return {
-        type: types.SET_SETTINGS,
-        settings
-    }
 }
 
 export function activateFrame(index) {
@@ -130,7 +123,7 @@ function initializeRemoteSettings(settingsPath) {
                 owner,
                 ref,
                 repo,
-                path: relativeSettingsPath,
+                path: relativeSettingsPath
             });
         } catch (e) {
             dispatch(setLoaded(true));
@@ -151,12 +144,12 @@ function initializeRemoteSettings(settingsPath) {
             dispatch(error(`Cannot parse settings file (${e})`));
             throw e;
         }
-    }
+    };
 }
 
 export function initialize(settings) {
     return async (dispatch, getState) => {
-        if(typeof settings === 'string') {
+        if (typeof settings === 'string') {
             await dispatch(initializeRemoteSettings(settings));
         } else {
             dispatch(setSettings(settings));
