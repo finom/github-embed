@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === 'development') {
         new webpack.HotModuleReplacementPlugin()
     );
 } else {
-    devtool = 'source-map';
+    devtool = 'module-source-map';
 
     plugins.push(
         new webpack.optimize.UglifyJsPlugin({
@@ -60,7 +60,8 @@ module.exports = {
         filename: 'github-embed.min.js',
         publicPath: '/',
         library: 'githubEmbed',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
+        sourceMapFilename: '[file].map'
     },
 
     postcss(wp) {
@@ -80,7 +81,7 @@ module.exports = {
             exclude: /node_modules/
         }, {
             test: /\.css?$/,
-            loader: ExtractTextPlugin.extract('style', 'css!postcss')
+            loader: ExtractTextPlugin.extract('style', '!css?-minimize&sourceMap!postcss')
         }]
     }
 };
