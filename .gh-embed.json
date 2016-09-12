@@ -14,7 +14,7 @@
     		"label": "Entry point",
     		"path": "src/index.js"
     	}, {
-    		"type": "js",
+    		"type": "json",
     		"path": ".gh-embed.json"
     	}
     ]

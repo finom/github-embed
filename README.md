@@ -21,7 +21,7 @@ CSS file is placed at **node_modules/css/github-embed.css**.
 
 ### Direct use
 
-Bundled (downloadable) version and the demo of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages)
+Bundled (downloadable) version and the demo of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages).
 ```html
 <script src="github-embed.min.js"></script>
 <script>
@@ -37,16 +37,16 @@ Bundled (downloadable) version and the demo of the tool lives at [gh-pages branc
 Settings object should include the following properties:
 
 - ``repo: STRING`` a name of a repository whose files will be embedded
-- ``owner: STRING`` an owner of thr repo
+- ``owner: STRING`` an owner of the repo
 - ``ref: STRING`` a branch, a tag or commit SHA
 - ``embed: ARRAY`` a list of embedded files
-	- ``path: STRING`` - a path to embedded file relative to root of the repo
-	- ``type: STRING`` - a type of the file you need to embed (programming language)
+	- ``path: STRING`` - a path to embedded file relative to the root of the repo
+	- ``type: STRING`` - a type of file you want to embed (a programming language)
 	- ``label: STRING`` - what to display in navigation. By default it's a name of embedded file
 	- ``active: BOOLEAN`` - is the item shown by default
-	- ``repo: STRING`` a name of a repository where current file lives (in case if you want to embed a file from another repo)
-	- ``owner: STRING`` an owner of a repo where current file lives (in case if you want to embed a file from another repo)
-	- ``ref: STRING`` a branch, a tag or commit SHA of a repo where current file lives (in case if you want to embed a file from another branch or repo)
+	- ``repo: STRING`` - a name of a repository where current file lives (in case if you want to embed a file from another repo)
+	- ``owner: STRING`` - an owner of a repo where current file lives (in case if you want to embed a file from another repo)
+	- ``ref: STRING`` - a branch, a tag or commit SHA of a repo where current file lives (in case if you want to embed a file from another branch or repo)
 
 There is one more thing: you can add to your embedding list any webpage. It could be useful if you want to show how does your web tool works. You need to set type option as ``"htmlpage"`` and assign webpage URL to ``"url"`` property
 
@@ -71,7 +71,7 @@ githubEmbed('#root', {
     		"label": "Entry point",
     		"path": "src/index.js"
     	}, {
-    		"type": "js",
+    		"type": "json",
     		"path": ".gh-embed.json"
     	}
     ]
@@ -80,15 +80,15 @@ githubEmbed('#root', {
 
 ### Remote settings
 
-In case if you want to embed your code on few places and you don't want to break something when a file path is changed (eg you have renamed ``app.js`` to ``index.js``) you can store embedding settings remotely inside a file next to the embedded files.
+In case if you want to embed your code on few places and you don't want to break something when a file path is changed (eg you have renamed ``app.js`` to ``index.js``) you can store embedding settings remotely inside a file next to embedded files. It allows to get your embedding always up to date and you'll need to modify it when paths are changed.
 
 ```js
 githubEmbed('.embed', 'https://github.com/finom/github-embed/blob/master/.gh-embed.json');
 ```
 
-Usually I call settings file **.gh-embed.json``**. It allows to get your embedding always up to date and you'll need to modify it when paths are changed.
+Usually I call settings file **.gh-embed.json**.
 
-It should contain valid JSON object with data described above. The only difference you don't need to specify ``owner``, ``repo`` and ``ref`` because these properties will be read from settings URL.
+It should contain valid JSON object with data described above. The only difference: you don't need to specify ``owner``, ``repo`` and ``ref`` because these properties will be extracted from settings URL.
 
 ```js
 {
@@ -107,7 +107,7 @@ It should contain valid JSON object with data described above. The only differen
     		"label": "Entry point",
     		"path": "src/index.js"
     	}, {
-    		"type": "js",
+    		"type": "json",
     		"path": ".gh-embed.json"
     	}
     ]
