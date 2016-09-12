@@ -76,13 +76,11 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            loaders: ['babel'],
-            exclude: /node_modules/,
-            include: __dirname
+            loader: 'babel',
+            exclude: /node_modules/
         }, {
             test: /\.css?$/,
-            loader: ExtractTextPlugin.extract('style', 'css!postcss'),
-            include: __dirname
+            loader: ExtractTextPlugin.extract('style', 'css!postcss')
         }]
     }
 };
