@@ -51,30 +51,28 @@ There is one more thing: you can add to your embedding list any webpage. It coul
 Example:
 ```js
 githubEmbed('#root', {
-	"owner": "matreshkajs",
-	"repo": "matreshka_examples",
-	"ref": "gh-pages",
-	"embed": [{
-		"type": "htmlpage",
-		"label": "Result",
-		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
-	}, {
-		"type": "html",
-		"label": "index.html",
-		"path": "treeview/index.html"
-	}, {
-		"type": "js",
-		"label": "app.js",
-		"path": "treeview/js/app.js"
-	}, {
-		"type": "js",
-		"label": "tree.class.js",
-		"path": "treeview/js/tree.class.js"
-	}, {
-		"type": "js",
-		"label": "tree-leaf.class.js",
-		"path": "treeview/js/tree-leaf.class.js"
-	}]
+    "owner": "finom",
+    "repo": "github-embed",
+    "ref": "master",
+    "embed": [
+        {
+            "type": "htmlpage",
+            "label": "Embedded HTML page",
+            "url": "http://example.com/"
+        },
+        {
+    		"type": "js",
+    		"label": "Webpack config",
+    		"path": "webpack.config.js"
+    	}, {
+    		"type": "js",
+    		"label": "Entry point",
+    		"path": "src/index.js"
+    	}, {
+    		"type": "js",
+    		"path": ".gh-embed.json"
+    	}
+    ]
 });
 ```
 
@@ -83,7 +81,7 @@ githubEmbed('#root', {
 In case if you want to embed your code on few places and you don't want to break something when a file path is changed (eg you have renamed ``app.js`` to ``index.js``) you can store embedding settings remotely inside a file next to the embedded files.
 
 ```js
-githubEmbed('.embed', 'https://github.com/matreshkajs/examples/blob/gh-pages/treeview/.gh-embed.json');
+githubEmbed('.embed', 'https://github.com/finom/github-embed/blob/master/.gh-embed.json');
 ```
 
 Usually I call settings file **.gh-embed.json``**. It allows to get your embedding always up to date and you'll need to modify it when paths are changed.
@@ -92,21 +90,24 @@ It should contain valid JSON object with data described above. The only differen
 
 ```js
 {
-	"embed": [{
-		"type": "htmlpage",
-		"url": "//matreshkajs.github.io/matreshka_examples/treeview/"
-	}, {
-		"type": "js",
-		"label": "app.js",
-		"path": "treeview/js/app.js"
-	}, {
-		"type": "js",
-		"label": "tree.class.js",
-		"path": "treeview/js/tree.class.js"
-	}, {
-		"type": "js",
-		"label": "tree-leaf.class.js",
-		"path": "treeview/js/tree-leaf.class.js"
-	}]
+    "embed": [
+        {
+            "type": "htmlpage",
+            "label": "Embedded HTML page",
+            "url": "http://example.com/"
+        },
+        {
+    		"type": "js",
+    		"label": "Webpack config",
+    		"path": "webpack.config.js"
+    	}, {
+    		"type": "js",
+    		"label": "Entry point",
+    		"path": "src/index.js"
+    	}, {
+    		"type": "js",
+    		"path": ".gh-embed.json"
+    	}
+    ]
 }
 ```
