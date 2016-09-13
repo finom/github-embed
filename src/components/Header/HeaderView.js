@@ -5,7 +5,7 @@ const HeaderView = ({
     items,
     githubLink,
     onLabelClick
-}) => (<nav className="github-embed-nav">
+}) => (<div className="github-embed-nav">
     {items.map(({ shown, label }, index) =>
         <a
             className={classNames({
@@ -26,7 +26,7 @@ const HeaderView = ({
         href={githubLink}
     >
         On Github
-    </a>
+    </div>
 </nav>);
 
 HeaderView.propTypes = {
