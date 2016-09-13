@@ -105,6 +105,10 @@
     position: absolute;
 
     top: 0;
+
+    height: 40px;
+
+    height: 2.5rem;
 }
 
 .github-embed-nav-link {
