@@ -1,3 +1,7 @@
+:root {
+    --nav-height: 2.5rem;
+}
+
 .github-embed {
     &-main {
         @import "../../node_modules/highlight.js/styles/tomorrow.css";
@@ -17,13 +21,14 @@
         border-bottom: solid 1px #C6CACD;
         z-index: 1;
         overflow-x: auto;
+        overflow-y: hidden;
         white-space: nowrap;
         width: 100%;
         position: absolute;
         top: 0;
 
         &-link {
-            line-height: 2rem;
+            line-height: var(--nav-height);
             padding: 0 1rem;
             color: #525252;
             cursor: pointer;
@@ -36,12 +41,12 @@
         &-on-github {
             float: right;
             padding: 0 1rem;
-            line-height: 2rem;
+            line-height: var(--nav-height);
         }
     }
 
     &-frames {
-        padding: 2rem 0;
+        padding: var(--nav-height) 0;
         top: 0;
         width: 100%;
         height: 100%;
@@ -66,7 +71,7 @@
     &-footer {
         border-top: solid 1px #C6CACD;
         padding: 0 1rem;
-        line-height: 2rem;
+        line-height: var(--nav-height);
         z-index: 1;
         overflow-x: auto;
         white-space: nowrap;
