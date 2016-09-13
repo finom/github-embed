@@ -9,6 +9,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const entry = [
     './src/css/style.css',
     'babel-polyfill',
+    './css/style.css',
     './src/index'
 ];
 

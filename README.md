@@ -17,7 +17,7 @@ npm install --save github-embed
 const githubEmbed = require('github-embed');
 githubEmbed('.element', settings);
 ```
-CSS file is placed at **node_modules/css/github-embed.css**.
+CSS file is placed at **node_modules/github-embed/npm/css/github-embed.css**.
 
 ### Direct use
 

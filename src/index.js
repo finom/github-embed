@@ -1,7 +1,6 @@
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import bala from 'balajs';
-import './css/style.css';
 import configureStore from './store/configureStore';
 import Root from './components/Root';
 import { initialize } from './actions';
