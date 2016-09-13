@@ -80,7 +80,7 @@
     "commitizen": "^2.8.6",
     "css-loader": "^0.25.0",
     "cz-simple-conventional-changelog": "0.0.1",
-    "deploy-to-git": "0.0.4",
+    "deploy-to-git": "0.0.5",
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^11.0.0",
     "eslint-plugin-import": "^1.14.0",
