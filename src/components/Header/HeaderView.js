@@ -26,8 +26,8 @@ const HeaderView = ({
         href={githubLink}
     >
         On Github
-    </div>
-</nav>);
+    </a>
+</div>);
 
 HeaderView.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
