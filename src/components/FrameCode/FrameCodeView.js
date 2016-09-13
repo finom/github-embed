@@ -22,7 +22,7 @@ class FrameCodeView extends Component {
         } = this.props;
 
         return (<pre
-            ref={ref => { this.ref = ref; }}
+            ref={(ref) => { this.ref = ref; }}
             className={type}
             style={{
                 display: shown ? '' : 'none'

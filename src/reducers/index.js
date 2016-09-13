@@ -44,7 +44,7 @@ export default function application(state = initialState, action) {
             return {
                 ...state,
                 lineNumbers,
-                frames: embed.map(item => {
+                frames: embed.map((item) => {
                     const newValue = {
                         loaded: false,
                         shown: false,
