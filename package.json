@@ -66,10 +66,10 @@
     "react-redux": "^4.4.5",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "highlight.js": "^9.6.0"
+    "highlight.js": "^9.6.0",
+    "react-hot-loader": "^3.0.0-beta.3"
   },
   "devDependencies": {
-    "react-hot-loader": "^3.0.0-beta.3",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^6.1.2",
