@@ -16,9 +16,6 @@ const plugins = [
     new ExtractTextPlugin('github-embed.css', {
         allChunks: true
     }),
-    new webpack.ProvidePlugin({
-        React: 'react'
-    }),
     new webpack.EnvironmentPlugin([
         'NODE_ENV'
     ])

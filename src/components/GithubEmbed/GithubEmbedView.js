@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import Loader from 'react-loader';
 import Header from '../Header';
 import Footer from '../Footer';

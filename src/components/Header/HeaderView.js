@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 const HeaderView = ({
     items,

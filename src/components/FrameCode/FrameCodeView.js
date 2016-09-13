@@ -1,4 +1,4 @@
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { highlightBlock } from 'highlight.js';
 
 class FrameCodeView extends Component {

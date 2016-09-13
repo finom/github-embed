@@ -15,7 +15,6 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
         "generator-star-spacing": 0,
         "react/forbid-prop-types": 0,
-        "react/react-in-jsx-scope": 0,
         "jsx-a11y/no-static-element-interactions": 0,
         "arrow-parens": 0
     },

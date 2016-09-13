@@ -1,4 +1,4 @@
-import { PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import FrameHTML from '../FrameHTML';
 import FrameCode from '../FrameCode';
 
