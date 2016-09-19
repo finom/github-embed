@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Loader from 'react-loader';
+import Loader from '../Loader';
 import Header from '../Header';
 import Footer from '../Footer';
 import Frames from '../Frames';

@@ -1,3 +1,5 @@
+@import './loader.css';
+
 :root {
     --nav-height: 2.5rem;
 }
