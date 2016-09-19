@@ -9,6 +9,7 @@ import { initialize } from './actions';
 let Wrap;
 
 if (process.env.NODE_ENV === 'development') {
+    // eslint-disable-next-line global-require
     Wrap = require('react-hot-loader').AppContainer;
 } else {
     Wrap = ({ children }) => children;
