@@ -1,10 +1,18 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+
 import bala from 'balajs';
 import configureStore from './store/configureStore';
 import Root from './components/Root';
 import { initialize } from './actions';
+
+let Wrap;
+
+if (process.env.NODE_ENV === 'development') {
+    Wrap = require('react-hot-loader').AppContainer;
+} else {
+    Wrap = ({ children }) => children;
+}
 
 module.exports = function githubEmbed(node, pathToSettings) {
     const store = configureStore();
@@ -12,9 +20,9 @@ module.exports = function githubEmbed(node, pathToSettings) {
     store.dispatch(initialize(pathToSettings));
 
     render(
-        <AppContainer>
+        <Wrap>
             <Root store={store} />
-        </AppContainer>,
+        </Wrap>,
         bala.one(node)
     );
 
@@ -25,9 +33,9 @@ module.exports = function githubEmbed(node, pathToSettings) {
             const RootContainer = require('./components/Root').default;
 
             render(
-                <AppContainer>
+                <Wrap>
                     <RootContainer store={store} />
-                </AppContainer>,
+                </Wrap>,
                 bala.one(node)
             );
         });
