@@ -34,7 +34,7 @@ export default async function getGithubFile(reqInfo) {
     const data = await resp.json();
 
     if (!data.content) {
-        throw Error('Guthub API returned wrong data');
+        throw Error('Github API is returned wrong data');
     }
 
     return atob(data.content.replace(/\s/g, ''));
