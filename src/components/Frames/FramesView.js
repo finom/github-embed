@@ -8,7 +8,7 @@ const FramesView = ({
     {types.map((type, index) => (
         type === 'htmlpage' ?
             <FrameHTML key={index} index={index} /> :
-            <FrameCode key={index} index={index} />
+                <FrameCode key={index} index={index} />
     ))}
 </div>);
 
