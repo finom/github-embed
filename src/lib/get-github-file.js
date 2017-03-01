@@ -21,7 +21,11 @@ export default async function getGithubFile(reqInfo) {
     let resp;
 
     try {
-        resp = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${ref}`);
+        resp = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${ref}`, {
+            headers: {
+                'Accept': 'application/vnd.github.VERSION.raw'
+            }
+        });
     } catch (e) {
         // fallback in case if API limmit is exceeded
         return makeDirectRequest(reqInfo);
@@ -31,11 +35,5 @@ export default async function getGithubFile(reqInfo) {
         return makeDirectRequest(reqInfo);
     }
 
-    const data = await resp.json();
-
-    if (!data.content) {
-        throw Error('Github API is returned wrong data');
-    }
-
-    return atob(data.content.replace(/\s/g, ''));
+    return await resp.text();
 }
