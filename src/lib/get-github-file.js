@@ -23,7 +23,7 @@ export default async function getGithubFile(reqInfo) {
     try {
         resp = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${ref}`, {
             headers: {
-                'Accept': 'application/vnd.github.VERSION.raw'
+                Accept: 'application/vnd.github.VERSION.raw'
             }
         });
     } catch (e) {
