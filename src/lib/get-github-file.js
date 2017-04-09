@@ -35,5 +35,5 @@ export default async function getGithubFile(reqInfo) {
         return makeDirectRequest(reqInfo);
     }
 
-    return await resp.text();
+    return resp.text();
 }
