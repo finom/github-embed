@@ -72,7 +72,7 @@ module.exports = {
                     options: {
                         minimize: false,
                         sourceMap: false,
-                        importLoaders: true,
+                        importLoaders: true
                     }
 
                 }, {

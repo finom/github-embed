@@ -7,7 +7,7 @@ async function makeDirectRequest(reqInfo) {
     } = reqInfo;
 
     const resp = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/${ref}/${path}`);
-    return await resp.text();
+    return resp.text();
 }
 
 export default async function getGithubFile(reqInfo) {
