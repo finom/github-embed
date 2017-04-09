@@ -1,19 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
-const postcssImport = require('postcss-import');
-const postcssNested = require('postcss-nested');
-const postcssCssnext = require('postcss-cssnext');
-const postcssCalc = require('postcss-calc');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const entry = [
     './src/css/style.css',
-    'babel-polyfill',
     './src/index'
 ];
 
 const plugins = [
-    new ExtractTextPlugin('github-embed.css', {
+    new ExtractTextPlugin({
+        filename: 'github-embed.css',
         allChunks: true
     }),
     new webpack.EnvironmentPlugin([
@@ -61,24 +57,28 @@ module.exports = {
         sourceMapFilename: '[file].map'
     },
 
-    postcss(wp) {
-        return [
-            postcssImport({
-                addDependencyTo: wp
-            }),
-            postcssNested(),
-            postcssCssnext(),
-            postcssCalc()
-        ];
-    },
+
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js$/,
-            loader: 'babel',
+            use: ['babel-loader'],
             exclude: /node_modules/
         }, {
             test: /\.css?$/,
-            loader: ExtractTextPlugin.extract('style', '!css?-minimize&sourceMap!postcss')
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [{
+                    loader: 'css-loader',
+                    options: {
+                        minimize: false,
+                        sourceMap: false,
+                        importLoaders: true,
+                    }
+
+                }, {
+                    loader: 'postcss-loader'
+                }]
+            })
         }]
     }
 };
