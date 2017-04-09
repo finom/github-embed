@@ -14,7 +14,7 @@ npm install --save github-embed babel-polyfill
 ```
 
 ```js
-require("babel-polyfill");
+require('babel-polyfill');
 const githubEmbed = require('github-embed');
 githubEmbed('.element', settings);
 ```
