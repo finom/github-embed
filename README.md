@@ -5,6 +5,8 @@ This branch contains a minified bundle of [github-embed](https://github.com/fino
 [Demo](http://finom.github.io/github-embed/demo.html)
 
 ```html
+<!-- babel-polyfill is required -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js"></script>
 <script src="github-embed.min.js"></script>
 ```
 
@@ -19,3 +21,5 @@ This branch contains a minified bundle of [github-embed](https://github.com/fino
   githubEmbed('.element', settings);
 </script>
 ```
+
+
