@@ -10,10 +10,11 @@ The tool allows to embed code from Github on a webpage.
 
 ### CommonJS
 ```
-npm install --save github-embed
+npm install --save github-embed babel-polyfill
 ```
 
 ```js
+require("babel-polyfill");
 const githubEmbed = require('github-embed');
 githubEmbed('.element', settings);
 ```
@@ -23,6 +24,7 @@ CSS is placed at **node_modules/github-embed/npm/css/github-embed.css**.
 
 Bundled (downloadable) version and the demo of the tool lives at [gh-pages branch](https://github.com/finom/github-embed/tree/gh-pages).
 ```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.23.0/polyfill.min.js"></script>
 <script src="github-embed.min.js"></script>
 <script>
     githubEmbed('.element', settings);
