@@ -7,7 +7,7 @@ const HeaderView = ({
     onLabelClick
 }) => (<div className="github-embed-nav">
     {items.map(({ shown, label }, index) =>
-        <a
+        (<a
             className={classNames({
                 'github-embed-nav-link': true,
                 'github-embed-nav-link-shown': shown
@@ -16,7 +16,7 @@ const HeaderView = ({
             onClick={() => onLabelClick(index)}
         >
             {label}
-        </a>
+        </a>)
     )}
 
     <a

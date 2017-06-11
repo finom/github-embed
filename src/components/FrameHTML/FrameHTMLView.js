@@ -10,6 +10,7 @@ const FrameHTMLView = ({
     style={{
         display: shown ? '' : 'none'
     }}
+    title={src}
     onLoad={() => onLoad()}
 />);
 
